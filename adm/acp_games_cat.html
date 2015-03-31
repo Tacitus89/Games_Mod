@@ -1,0 +1,64 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_ACP_GAMES} [{CAT_TITLE}]</h1>
+<p>{L_ACP_GAMES_DESC}</p>
+
+<form id="module" method="post">
+
+<fieldset class="quick" style="float: left;">
+	<input type="text" name="game_name" maxlength="30" /> 
+	<input class="button2" name="addgame" type="submit" value="{L_ACP_CREATE_GAME}" />
+</fieldset>
+
+</form>
+<div class="clearfix">&nbsp;</div>
+<br />
+<!-- IF games -->
+<table cellspacing="1">
+	<col class="row3" /><col class="row4" /><col class="row3" />
+<tbody>
+	<tr>
+		<td class="row2" colspan="1"><a href="{U_GAMES_INDEX}">{L_ACP_GAMES_MGT_INDEX}</a> -&gt; {CAT_TITLE}</td>
+		<td class="row2" colspan="2" style="text-align: right;"><!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE -->{PAGE_NUMBER}<!-- ENDIF --></td>
+	</tr>
+
+	<!-- BEGIN games -->
+		<tr>
+			<td style="width: 25%; text-align: center;">{games.GAME_IMAGE}</td>
+			<td style="padding-left: 15px;">{games.GAME_TITLE}</td>
+			<td style="width:90px; white-space: nowrap; text-align: right; vertical-align: middle;">
+				<a href="{games.U_EDIT}">{ICON_EDIT}</a> 
+				<a href="{games.U_DELETE}">{ICON_DELETE}</a>
+			</td>
+		</tr>
+	<!-- END games -->
+	</tbody>
+</table>
+<!-- ELSE -->
+<table cellspacing="1">
+	<col class="row3" /><col class="row4" /><col class="row3" />
+<tbody>
+	<tr>
+		<td class="row3" colspan="3"><a href="{U_GAMES_INDEX}">{L_ACP_GAMES_MGT_INDEX}</a> -&gt; {CAT_TITLE}</td>
+	</tr>
+	<tr>
+		<td style="width: 5%; text-align: center;"><img src="images/file_conflict.gif" alt="{L_CAT}" /></td>
+		<td>{L_ACP_NO_GAMES}</td>
+		<td style="width:90px; white-space: nowrap; text-align: right; vertical-align: middle;">
+			{ICON_EDIT_DISABLED}
+			{ICON_DELETE_DISABLED}
+		</td>
+	</tr>
+<!-- ENDIF -->
+</tbody>
+</table>
+<div class="clearfix">&nbsp;</div>
+<form id="module" method="post">
+
+<fieldset class="quick" style="float: left;">
+	<input type="text" name="game_name" maxlength="30" /> 
+	<input class="button2" name="addgame" type="submit" value="{L_ACP_CREATE_GAME}" />
+</fieldset>
+
+</form>
+<!-- INCLUDE overall_footer.html -->

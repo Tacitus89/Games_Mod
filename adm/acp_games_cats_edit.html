@@ -1,0 +1,22 @@
+<!-- INCLUDE overall_header.html -->
+<form id="{GAME_ACTION}" action="{GAME_SUBMIT}" method="post">
+<h1>{GAME_TITLE}</h1>
+<p>{GAME_TEXT}</p>
+<fieldset>
+	<legend>{GAME_LEGEND}</legend>
+		<dl>
+			<dt><label>{NAME_TITLE}:</label></dt>
+			<dd><label><input name="name" type="text" size="30" maxlength="30" value="{NAME_VALUE}" /></label></dd>
+		</dl>
+		<dl>
+			<dt><label>{DIR_TITLE}:</label><br><span>{L_ACP_DIR_CHANGE_EXPLAIN}</span></dt>
+			<dd><label><select name="dir">{DIR_OPTIONS}</select></label></dd>
+		</dl>
+</fieldset>
+<fieldset class="submit-buttons">
+	<legend>{L_SUBMIT}</legend>
+	<input type="submit" value="{L_SUBMIT}" name="submit" class="button1"/>&nbsp;
+	<input type="submit" value="{L_CANCEL}" name="cancelcat" class="button2"/>
+</fieldset>
+</form>
+<!-- INCLUDE overall_footer.html -->
